@@ -1,4 +1,4 @@
-function [k,cc] = curvature_estimation2d(c) 
+function [r,k,cc] = curvature_estimation2d(c) 
 %% curvature_estimation2d - 2d curvature estimation by osculating circle
 %   
 %   REFERENCE:
@@ -17,6 +17,7 @@ function [k,cc] = curvature_estimation2d(c)
 %       c     - contour as [y,x].
 %
 %   OUTPUT:
+%       r     - radius,
 %       k     - curvature = 1/r,
 %       c     - circle center.
 %
@@ -27,7 +28,7 @@ function [k,cc] = curvature_estimation2d(c)
 s = curve_segmentation2d(c); 
 
 %% curvature estimation
-k = []; cc = [];
+r = []; k = []; cc = [];
 for i=1+1:size(s)-1
     ixL = s(i-1);
     ixC = s(i);
@@ -41,7 +42,8 @@ for i=1+1:size(s)-1
     if ival==1
        vector = pi_k-center; 
        radius = norm(vector);
-       k = [k; 1/radius];       
+       r = [r; radius];
+       k = [k; 1/radius];
        cc = [cc; center];
     end
 end

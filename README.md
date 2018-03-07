@@ -5,6 +5,8 @@
 | ------------- | ------------- |
 | <img src="https://github.com/BoguslawObara/curvature_estimation2d/blob/master/im/wave.png" width="250">  | <img src="https://github.com/BoguslawObara/curvature_estimation2d/blob/master/im/wave_curv.png" width="250"> |
 
+Required packages:
+- [curve_segmentation2d](../../../curve_segmentation2d)
 
 If you find this code useful in your research and developement, please consider citing:
 
