@@ -13,7 +13,7 @@ im = imread('./im/wave.tif');
 c = bwtraceboundary(im, [row, col], 'N');
 [r,k,cc] = curvature_estimation2d(c);
 
-%% tlot
+%% plot
 figure; curvature_estimation_plot2d(c,r,cc);
 
 %% mean and variance
